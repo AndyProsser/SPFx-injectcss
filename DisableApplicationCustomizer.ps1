@@ -5,5 +5,5 @@ $credentials = Get-Credential
 Connect-PnPOnline $tenantUrl -Credentials $credentials
 
 # Connect to tenant
-Get-PnPCustomAction | ? Name -eq "InjectCssApplicationCustomizer" | Remove-PnPCustomAction
+Get-PnPCustomAction | Where-Object Name -eq "InjectCssApplicationCustomizer" | Remove-PnPCustomAction
 

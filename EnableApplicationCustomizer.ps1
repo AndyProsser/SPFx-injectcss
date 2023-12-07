@@ -24,4 +24,3 @@ $ca.Update()
 
 $context.Load($web.UserCustomActions)
 Invoke-PnPQuery
-

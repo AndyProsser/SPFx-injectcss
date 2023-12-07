@@ -5,4 +5,4 @@ $tenantUrl = "https://<your-tenant>.sharepoint.com"
 $credentials = Get-Credential
 Connect-PnPOnline $tenantUrl -Credentials $credentials
 
-Add-PnPApp -path .\sharepoint\solution\react-application-injectcss.sppkg -Publish -SkipFeatureDeployment -Overwrite
+Add-PnPApp -path .\sharepoint\solution\spfx-injectcss.sppkg -Publish -SkipFeatureDeployment -Overwrite
