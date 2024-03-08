@@ -20,7 +20,18 @@ export default class InjectCssApplicationCustomizer
     public onInit(): Promise<void> {
         Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-        const cssUrl: string = this.properties.cssurl;
+        const fontUrl: string = this.properties.fontUrl;
+        if (fontUrl) {
+            // inject the style sheet
+            const head: any = document.getElementsByTagName("head")[0] || document.documentElement;
+            let customStyle: HTMLLinkElement = document.createElement("link");
+            customStyle.href = fontUrl;
+            customStyle.rel = "stylesheet";
+            customStyle.type = "text/css";
+            head.insertAdjacentElement("beforeEnd", customStyle);
+        }
+
+        const cssUrl: string = this.properties.cssUrl;
         if (cssUrl) {
             // inject the style sheet
             const head: any = document.getElementsByTagName("head")[0] || document.documentElement;
